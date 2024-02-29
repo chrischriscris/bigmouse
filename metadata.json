@@ -1,0 +1,8 @@
+{
+  "name": "Shake To Find Pointer",
+  "description": "Grows the pointer when it shakes to make it easy to findcOS",
+  "uuid": "bigmouse@ruckrollhuke.gmail.com",
+  "shell-version": [
+    "45"
+  ]
+}
