@@ -24,12 +24,13 @@ export default class PlainExampleExtension extends Extension {
     this._cursor_tracker = cursor_tracker;
 
     const cursorChangedHandler = () => {
-      const [x, y] = global.get_pointer();
-      console.log("Cursor changed");
-      console.log(`x: ${x}, y: ${y}`);
+      const [point, _] = cursor_tracker.get_pointer();
+      const { x, y } = point;
+      console.log("Cursor moved to", x, y);
     };
 
-    cursor_tracker.connect("cursor-changed", cursorChangedHandler);
+    // cursor_tracker.connect("cursor-changed", cursorChangedHandler);
+    cursor_tracker.connect("position-invalidated", cursorChangedHandler);
   }
 
   disable() { }
